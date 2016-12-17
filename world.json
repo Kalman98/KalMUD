@@ -1,47 +1,54 @@
 {
     "Fireplace": {
-        "description": "You're in a blisteringly hot fireplace and slowly roasting, but at least you're not cold.", 
+        "description": "You're in a blisteringly hot fireplace and slowly roasting, but at least you're not cold.",
         "exits": {
             "out": "Tavern"
         }
-    }, 
+    },
     "Outside": {
-        "description": "You're standing outside a tavern. It's raining.", 
+        "description": "You're standing outside a tavern. It's raining.",
         "exits": {
             "inside": "Tavern"
         }
-    }, 
+    },
     "Tavern": {
-        "description": "You're in a cozy tavern warmed by an open fire.", 
+        "description": "You're in a cozy tavern warmed by an open fire.",
         "exits": {
-            "bar": "bar", 
-            "bathroom": "bathroom", 
-            "chair": "chair", 
-            "fireplace": "Fireplace", 
-            "kitchen": "kitchen", 
+            "bar": "bar",
+            "bathroom": "bathroom",
+            "chair": "chair",
+            "fireplace": "Fireplace",
+            "kitchen": "kitchen",
             "outside": "Outside"
         }
-    }, 
+    },
     "bar": {
-        "description": "Relaxing.", 
+        "description": "Relaxing.",
         "exits": {
+            "drink cabinet": "drink cabinet",
             "tavern": "Tavern"
         }
-    }, 
+    },
     "bathroom": {
-        "description": "Fancy!", 
+        "description": "Fancy!",
         "exits": {
             "tavern": "Tavern"
         }
-    }, 
+    },
     "chair": {
-        "description": "Your favorite place to sit.", 
+        "description": "Your favorite place to sit.",
         "exits": {
             "tavern": "Tavern"
         }
-    }, 
+    },
+    "drink cabinet": {
+        "description": "Oh, so many choices. Too bad you're underage.",
+        "exits": {
+            "bar": "bar"
+        }
+    },
     "kitchen": {
-        "description": "Where the cooks prepare food for customers to consume.", 
+        "description": "Where the cooks prepare food for customers to consume.",
         "exits": {
             "tavern": "Tavern"
         }

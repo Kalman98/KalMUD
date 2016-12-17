@@ -45,7 +45,6 @@ while True:
     # us up-to-date information
     mud.update()
 
-
     # go through any newly connected players
     for id in mud.get_new_players():
 
@@ -62,7 +61,6 @@ while True:
         # send the new player a prompt for their name
         mud.send_message(id,"What is your name?")
 
-
     # go through any recently disconnected players
     for id in mud.get_disconnected_players():
 
@@ -77,7 +75,6 @@ while True:
 
         # remove the player's entry in the player dictionary
         del(players[id])
-
 
     # go through any new commands sent from players
     for id,command,params in mud.get_commands():
@@ -113,7 +110,8 @@ while True:
             mud.send_message(id,"  say <message>  - Says something out loud, e.g. 'say Hello'")
             mud.send_message(id,"  look           - Examines the surroundings, e.g. 'look'")
             mud.send_message(id,"  go <exit>      - Moves through the exit specified, e.g. 'go outside'")
-            mud.send_message(id,'  room <name> <"Description."> <exit>  - Creates a room with the given description and an exit to and from the given location.')
+            mud.send_message(id,'  room <name> <"Description."> <exit>  - Creates a room with the given description and'
+                                ' an exit to and from the given location.')
 
         # 'say' command
         elif command == "say":
@@ -152,7 +150,7 @@ while True:
         elif command == "go":
 
             # store the exit name
-            ex = params[0]
+            ex = ' '.join(params)
 
             # store the player's current room
             rm = rooms[players[id]["room"]]
@@ -188,13 +186,9 @@ while True:
 
         # some other, unrecognised command
         elif command == "room":
-            #full_params = shlex.split(params)
-        #    mud.send_message(id, "Your second parameter is %s" % full_params[2])
 
             rooms[params[0]] = {"description": params[1],"exits": {''.join(params[2]).lower(): params[2]}}
             rooms[params[2]]["exits"][params[0]] = params[0]
-            #for k,v in jsonData.items():
-                #merge_json(rooms.setdefault(k, []), v)
 
             with open('world.json', 'w') as outfile:
                 json.dump(rooms, outfile, sort_keys = True, indent = 4, ensure_ascii=False)

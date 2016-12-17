@@ -41,7 +41,6 @@ class MudServer(object):
             self.buffer = buffer
             self.lastcheck = lastcheck
 
-
     # Used to store different types of occurences
     _EVENT_NEW_PLAYER = 1
     _EVENT_PLAYER_LEFT = 2
