@@ -1,0 +1,49 @@
+{
+    "Fireplace": {
+        "description": "You're in a blisteringly hot fireplace and slowly roasting, but at least you're not cold.", 
+        "exits": {
+            "out": "Tavern"
+        }
+    }, 
+    "Outside": {
+        "description": "You're standing outside a tavern. It's raining.", 
+        "exits": {
+            "inside": "Tavern"
+        }
+    }, 
+    "Tavern": {
+        "description": "You're in a cozy tavern warmed by an open fire.", 
+        "exits": {
+            "bar": "bar", 
+            "bathroom": "bathroom", 
+            "chair": "chair", 
+            "fireplace": "Fireplace", 
+            "kitchen": "kitchen", 
+            "outside": "Outside"
+        }
+    }, 
+    "bar": {
+        "description": "Relaxing.", 
+        "exits": {
+            "tavern": "Tavern"
+        }
+    }, 
+    "bathroom": {
+        "description": "Fancy!", 
+        "exits": {
+            "tavern": "Tavern"
+        }
+    }, 
+    "chair": {
+        "description": "Your favorite place to sit.", 
+        "exits": {
+            "tavern": "Tavern"
+        }
+    }, 
+    "kitchen": {
+        "description": "Where the cooks prepare food for customers to consume.", 
+        "exits": {
+            "tavern": "Tavern"
+        }
+    }
+}
