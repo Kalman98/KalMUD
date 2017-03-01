@@ -291,7 +291,7 @@ class MudServer(object):
 
                     # add a command occurence to the new events list with the
                     # player's id number, the command and its parameters
-                    self._new_events.append((self._EVENT_COMMAND,id,command,params))
+                    self._new_events.append((self._EVENT_COMMAND,id,command.lower(),params))
 
             # if there is a problem reading from the socket (e.g. the client has
             # disconnected) a socket error will be raised
